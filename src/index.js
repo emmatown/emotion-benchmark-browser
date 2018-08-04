@@ -1,3 +1,4 @@
+// @flow
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import ReactDOM from "react-dom";
@@ -26,4 +27,7 @@ function App() {
 }
 
 const rootElement = document.getElementById("root");
+if (!rootElement) {
+  throw new Error("could not find root");
+}
 ReactDOM.render(<App />, rootElement);

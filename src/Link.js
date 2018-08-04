@@ -1,7 +1,8 @@
+// @flow
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 
-export let Link = props => {
+export let Link = (props: any) => {
   return (
     <a
       rel={props.target === "_blank" ? "noopener" : undefined}

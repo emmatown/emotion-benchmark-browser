@@ -1,10 +1,12 @@
+// @flow
 import * as React from "react";
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import { BenchmarkLink } from "./BenchmarkLink";
 import { Link } from "./Link";
+import type { CircleBuildsResult } from "./types";
 
-export function Item(item) {
+export function Item(item: CircleBuildsResult) {
   return (
     <React.Fragment>
       <details

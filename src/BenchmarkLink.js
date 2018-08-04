@@ -1,7 +1,13 @@
+// @flow
 import * as React from "react";
 import { Link } from "./Link";
 
-export function BenchmarkLink(props: { id: string, children: React.Node }) {
+type Props = {
+  id: string | number,
+  children: React.Node
+};
+
+export function BenchmarkLink(props: Props) {
   return (
     <Link
       target="_blank"
