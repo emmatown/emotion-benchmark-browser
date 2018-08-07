@@ -60,7 +60,7 @@ export class BenchmarkSearch extends React.Component<Props, State> {
       this.setState({ error: true });
     }
     let circleCiTest = commitStatuses.find(
-      item => item.context === "ci/circleci: test"
+      item => item.context === "ci/circleci: flow"
     );
     let res = /(\d+)/.exec(circleCiTest.target_url);
     if (res === null) {
