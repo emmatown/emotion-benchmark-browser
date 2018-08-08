@@ -1,6 +1,7 @@
 // @flow
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import "intersection-observer";
 import ReactDOM from "react-dom";
 import "./styles.css";
 import { BenchmarkList } from "./BenchmarkList";
