@@ -25,17 +25,61 @@ export class BenchmarkSearch extends React.Component<Props, State> {
       <div>
         <form onSubmit={this.onSubmit}>
           <input
+            css={{
+              color: "white",
+              backgroundColor: "#ff2ad7",
+              borderColor: "#ff2ad7",
+              borderStyle: "solid",
+              borderRadius: 8,
+              fontSize: 14,
+              padding: 8,
+              margin: 2
+            }}
             value={this.state.value}
             onChange={event => {
               this.setState({ value: event.target.value });
             }}
             placeholder="Commit SHA"
           />
-          <button type="submit" disabled={this.state.disabled}>
+          <button
+            css={{
+              color: "white",
+              backgroundColor: "#ff2ad7",
+              borderStyle: "solid",
+              borderWidth: 2,
+              padding: 8,
+              margin: 2,
+              borderColor: "#ff2ad7",
+              fontWeight: "bold",
+              fontSize: 14,
+              ":disabled": {
+                backgroundColor: "#ff2ad7",
+                color: "#d1cfcf"
+              },
+              ":hover": {
+                backgroundColor: "white",
+                color: "#ff2ad7"
+              },
+              borderRadius: 8,
+              marginRight: 0
+            }}
+            type="submit"
+            disabled={this.state.disabled}
+          >
             Find benchmark
           </button>
         </form>
-        {this.state.error && <div>Something went wrong.😢</div>}
+        {this.state.error && (
+          <div
+            css={{
+              padding: 2,
+              paddingTop: 8,
+              color: "hotpink"
+            }}
+          >
+            Something went wrong.😢
+          </div>
+        )}
         {this.state.id && (
           <BenchmarkLink id={this.state.id}>#{this.state.id}</BenchmarkLink>
         )}

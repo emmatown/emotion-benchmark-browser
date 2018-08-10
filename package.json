@@ -8,11 +8,11 @@
     "@emotion/core": "0.12.0",
     "@emotion/memoize": "0.6.5",
     "@researchgate/react-intersection-observer": "0.7.3",
+    "color-fns": "0.0.7",
     "flow-bin": "^0.78.0",
     "intersection-observer": "0.5.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
-    "react-infinite-scroller": "1.2.0",
     "react-scripts": "1.1.4",
     "react-select": "2.0.0"
   },

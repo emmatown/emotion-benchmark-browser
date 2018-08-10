@@ -16,7 +16,7 @@ function App() {
     >
       <h1
         css={{
-          color: "#c0f"
+          color: "#ff2ad7"
         }}
       >
         Emotion Benchmarks

@@ -11,7 +11,6 @@ export let Link = (props: any) => {
         ":visited": {
           color: "#ff2ad7"
         },
-        ":hover": { color: "" },
         textDecoration: "none",
         borderBottom: "currentColor dotted 2px"
       }}

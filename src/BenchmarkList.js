@@ -2,11 +2,10 @@
 /** @jsx jsx */
 import * as React from "react";
 import { jsx } from "@emotion/core";
-import InfiniteScroller from "react-infinite-scroller";
 import { Item } from "./Item";
 import type { CircleBuildsResult } from "./types";
-import Select from "react-select";
-import memoize from "@emotion/memoize";
+import Select, { components } from "react-select";
+import { alpha } from "color-fns";
 import Observer from "@researchgate/react-intersection-observer";
 type State = {
   data: Array<CircleBuildsResult>
@@ -28,6 +27,33 @@ let fetchData = (branch: string, offset: number) => {
   }
   return cache[cacheKey];
 };
+
+let selectComponents = {
+  DropdownIndicator: props => {
+    return (
+      components.DropdownIndicator && (
+        <components.DropdownIndicator {...props}>
+          👇
+        </components.DropdownIndicator>
+      )
+    );
+  }
+};
+
+let selectStyles = {
+  control: (base, state) => {
+    return {
+      ...base,
+      boxShadow: state.isFocused ? `0 0 0 1px ${primary}` : null,
+      borderColor: state.isFocused ? primary : "hsl(0,0%,80%)",
+      ":hover": {
+        borderColor: primary
+      }
+    };
+  }
+};
+
+let primary = "#ff2ad7";
 
 export class BenchmarkList extends React.Component<{}, State> {
   state = {
@@ -80,6 +106,9 @@ export class BenchmarkList extends React.Component<{}, State> {
             paddingTop: 12,
             paddingBottom: 4
           }}
+          classNamePrefix="react-select"
+          styles={selectStyles}
+          components={selectComponents}
           value={this.state.branch}
           onChange={val => {
             this.setState({ branch: val, data: [], hasFetched: false }, () => {
